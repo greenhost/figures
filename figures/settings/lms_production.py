@@ -81,6 +81,9 @@ def plugin_settings(settings):
     update_webpack_loader(settings.WEBPACK_LOADER, settings.ENV_TOKENS['FIGURES'])
     update_celerybeat_schedule(settings.CELERYBEAT_SCHEDULE, settings.ENV_TOKENS['FIGURES'])
 
-    settings.CELERY_IMPORTS += (
-        "figures.tasks",
-    )
+    # Apparently not needed anymore since
+    # https://github.com/edx/edx-platform/pull/25479/files
+    #
+    # settings.CELERY_IMPORTS += (
+    #     "figures.tasks",
+    # )
